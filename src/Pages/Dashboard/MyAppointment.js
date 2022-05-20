@@ -1,11 +1,12 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyAppointment = () => {
     const [appointments, setAppointments] = useState([]);
+    console.log(appointments);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
@@ -17,9 +18,9 @@ const MyAppointment = () => {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-                .then(res =>{
+                .then(res => {
                     console.log('res', res);
-                    if(res.status===401 || res.status===403){
+                    if (res.status === 401 || res.status === 403) {
                         signOut(auth);
                         localStorage.removeItem('accessToken');
                         navigate('/')
@@ -37,7 +38,6 @@ const MyAppointment = () => {
             <h2>My Appointment: {appointments.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
-                    {/* <!-- head --> */}
                     <thead>
                         <tr>
                             <th></th>
@@ -45,18 +45,25 @@ const MyAppointment = () => {
                             <th>Date</th>
                             <th>Time</th>
                             <th>Treatment</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
                             appointments.map((appointment, index) =>
-                                <tr>
-                                    <th>{index+1}</th>
+                            
+                                <tr key={appointment._id}>
+                                    <th>{index + 1}</th>
                                     <td>{appointment.patientName}</td>
                                     <td>{appointment.date}</td>
                                     <td>{appointment.slot}</td>
                                     <td>{appointment.treatment}</td>
+                                    <td>
+                                        {(appointment.price && !appointment.paid) && <Link to={`/dashboard/payment/${appointment._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}    
+                                        {(appointment.price && appointment.paid) && <span className='text-success'>Paid</span>}
+                                        
+                                    </td>
                                 </tr>
                             )
                         }

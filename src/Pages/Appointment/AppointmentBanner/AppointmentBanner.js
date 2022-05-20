@@ -20,7 +20,7 @@ const AppointmentBanner = ({date, setDate}) => {
                             // className='bg-base-100 shadow-xl w-72 h-76 rounded-lg pt-5 pb-5 mr-10 pr-5'
                             mode="single"
                             selected={date}
-                            onSelect={setDate}
+                            onDayClick={setDate}
                         />
                     </div>
                 </div>

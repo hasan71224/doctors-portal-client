@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const AddDoctor = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch('https://still-taiga-81457.herokuapp.com/service').then(res => res.json()))
 
     const imageSorageKey = 'c1dd83e2b223d428c938e8ce0f6eca42'
     /**
@@ -38,7 +38,7 @@ const AddDoctor = () => {
                     img: img 
                 }
                 //send to your database
-                fetch('http://localhost:5000/doctor',{
+                fetch('https://still-taiga-81457.herokuapp.com/doctor',{
                     method: 'POST',
                     headers:{
                         'content-type': 'application/json',

@@ -2,6 +2,7 @@
     {
         "_id": 1,
         "name": "Teeth Orthodontics",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -25,6 +26,7 @@
     {
         "_id": 2,
         "name": "Cosmetics Dentistry ",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -48,6 +50,7 @@
     {
         "_id": 3,
         "name": "Teeth Cleaning",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -71,6 +74,7 @@
     {
         "_id": 4,
         "name": "Cavity Protection",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -94,11 +98,13 @@
     {
         "_id": 5,
         "name": "Pediatric Dental",
+        "price": 99,
         "slots": [ ]
     },
     {
         "_id": 6,
         "name": "Oral Surgery",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -122,6 +128,7 @@
     {
         "_id": 7,
         "name": "Dental crowns",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -145,6 +152,7 @@
     {
         "_id": 8,
         "name": "Partial Dentures",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -168,6 +176,7 @@
     {
         "_id": 9,
         "name": "Full Dentures",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
@@ -191,6 +200,7 @@
     {
         "_id": 10,
         "name": "Root Canals",
+        "price": 99,
         "slots": [
             "8.00 AM - 8.30 AM",
             "8.30 AM - 9.00 AM",
